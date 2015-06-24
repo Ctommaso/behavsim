@@ -1,0 +1,3 @@
+Name of the Simulation,Number of Houses,Number of Days,Power [W],Duration [hour]
+base_load,1,7,100,6
+-,-,-,1,2

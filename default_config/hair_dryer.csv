@@ -1,0 +1,3 @@
+Name of the Simulation,Number of Houses,Number of Days,Power [W],Duration [min],Morning Time [hour],Afternoon Time [hour],Evening Time [hour],Morning Time (WE) [hour],Afternoon Time (WE) [hour],Evening Time (WE) [hour],Morning Prob [%],Afternoon Prob [%],Evening Prob [%],Morning Prob (WE) [%],Afternoon Prob (WE) [%],Evening Prob (WE) [%]
+hair_dryer,1,7,2000,5,7,13,20,10,15,20,100,100,100,100,100,100
+-,-,-,20,1,1,1,1,1,1,1,-,-,-,-,-,-

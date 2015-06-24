@@ -1,0 +1,3 @@
+Name of the Simulation,Number of Houses,Number of Days,Power [W],Compressor On [min],Compressor Off [min],Cycle Probability [%]
+fridge,1,7,120,15,35,95
+-,-,-,1.2,1.5,3.5,-

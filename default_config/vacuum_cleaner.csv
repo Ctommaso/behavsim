@@ -1,0 +1,3 @@
+Name of the Simulation,Number of Houses,Number of Days,Power [W],Duration [min],Probability [%],Earliest Start [hour],Latest Start [hour]
+vacuum_cleaner,1,7,1000,30,100,7,23
+-,-,-,10,3,-,-,-
