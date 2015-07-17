@@ -83,7 +83,7 @@ class Simulator:
         
         # Creates the main GUI window.
         win = gtk.Window()
-        win.set_title("SEMIAH Consumption Simulation")
+        win.set_title("BehavSim - The SEMIAH Consumption Simulation Tool")
         win.set_icon_from_file("icons/simulator.png")
         win.resize(748, 640)
         win.set_position(gtk.WIN_POS_CENTER)
@@ -165,7 +165,7 @@ class Simulator:
         help_button = gtk.ToolButton()
         help_button.set_tooltip_text("Help")
         help_button.set_icon_widget(help_image)
-        help_button.connect("clicked", self.quit_gtk)
+        help_button.connect("clicked", self.sim_help)
         quit_button = gtk.ToolButton()
         quit_button.set_tooltip_text("Quit Application")
         quit_button.set_icon_widget(quit_image)
@@ -189,6 +189,87 @@ class Simulator:
         win.add(vbox)
         win.connect("destroy", self.quit_gtk)
         win.show_all()
+        
+    # Defines the sim_help function.
+    def sim_help(self, button):
+        
+        font_desc = pango.FontDescription("monospace")
+        help_window = gtk.Window() 
+        help_window.set_modal(True)
+        help_window.set_title("Help")
+        help_window.set_border_width(0)
+        help_window.set_icon_from_file("icons/simulator.png")
+        help_window.set_position(gtk.WIN_POS_CENTER)
+        help_window.resize(800, 600)
+        help_scroll_window = gtk.ScrolledWindow()
+        help_scroll_window.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
+        text = "Welcome to BehavSim, the SEMIAH Consumption Simulation Tool!\n"
+        text += "============================================================\n"
+        text += "\n"
+        text += "To use BehavSim, you need to:\n"
+        text += "1. Configure the simulation\n"
+        text += "2. Run the simulation\n"
+        text += "\n"
+        text += "1. Configure the simulation\n"
+        text += "---------------------------\n"
+        text += "\n"
+        text += "- Click the blue cross button (top left)\n"
+        text += "  -> Opens a dialog\n"
+        text += "- Create a new folder (recommended)\n"
+        text += "  -> Confirmation in terminal:\n"
+        text += "     >>> New Simulation Started!\n"
+        text += "     >>> /media/fep/DATA/HEVs/SEMIAH/Simulator/test\n"
+        text += "  !! CAUTION !! If you use an existing folder, all its content will be deleted !!\n"
+        text += "  Two folders are created in the simulation folder: configuration and results\n"
+        text += "  If you try to add appliances (click the appliances buttons) before selecting a simulation folder:\n"
+        text += "  -> Error message in terminal:\n"
+        text += "     >>> No simulation directory selected! Please click the Start Configuration button!\n"
+        text += "- Click the button of the appliances you want to add to the simulation\n"
+        text += "  -> Opens a dialog\n"
+        text += "- Enter the simulation parameters of the selected appliance\n"
+        text += "  -> Confirmation in terminal:\n"
+        text += "     >>> New Fridge Configuration Added (fridge)!\n"
+        text += "  The parameters of the added appliance are stored in a .csv file in the configuration folder\n"
+        text += "  The parameters of the appliances of the same type are stored in the same .csv file (fridge, freezer, etc)\n"
+        text += "  Each appliance takes two lines of the .csv files\n"
+        text += "  -> First line for average values\n"
+        text += "  -> Second line for standard deviation (- if not applicable)\n"
+        text += "  You can also manually edit the .csv files to add appliances\n"
+        text += "  !! CAUTION !! Do not change the first line (header) of the .csv files !!\n"
+        text += "\n"
+        text += "2. Run the simulation\n"
+        text += "---------------------\n"
+        text += "\n"
+        text += "- Click the green arrow\n"
+        text += "  -> Opens a dialog\n"
+        text += "- Select the simulation folder\n"
+        text += "  -> The simulation is running\n"
+        text += "  -> Confirmation of each simulation of each applince in terminal:\n"
+        text += "     >>> New Fridge Consumption Simulation!\n"
+        text += "     >>> House 1:\n"
+        text += "     >>> Daily average energy = 0.894 kWh.\n"
+        text += "     >>> Duration = 0.640 seconds.\n"
+        text += "     >>> House 2:\n"
+        text += "     >>> Daily average energy = 0.890 kWh.\n"
+        text += "     >>> Duration = 0.658 seconds.\n"
+        text += "     >>> The Fridge Consumption Simulation took:\n"
+        text += "     >>> 0 hours, 0 minutes, and 1.348 seconds.\n"
+        text += "  The results are saved in .csv files in the results folder\n"
+        text += "  The results of the appliances of the same type are stored in the same folder (fridge, freezer, etc)\n"
+        text += "  The results of each appliance are stored in a different .csv file (house_000001.csv, house_000002.csv, etc)\n"
+        text += "\n"
+        text += "01.07.2015\n"
+        text += "Pierre Ferrez\n"
+        text += "pierre.ferrez@hevs.ch"
+        help_text = gtk.TextView()
+        help_text.set_editable(False)
+        help_text_buffer = help_text.get_buffer()
+        help_text.modify_font(font_desc)
+        help_text.set_wrap_mode(gtk.WRAP_WORD)
+        help_scroll_window.add(help_text)
+        help_window.add(help_scroll_window)
+        help_text_buffer.set_text(text)
+        help_window.show_all()
         
     # Defines the quit_gtk function.
     def quit_gtk(self, button):
