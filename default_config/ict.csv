@@ -1,3 +1,3 @@
 Name of the Simulation,Number of Houses,Number of Days,Power [W],Morning Duration [min],Afternoon Duration [min],Evening Duration [min],Morning Duration (WE) [min],Afternoon Duration (WE) [min],Evening Duration (WE) [min],Morning Time [hour],Afternoon Time [hour],Evening Time [hour],Morning Time (WE) [hour],Afternoon Time (WE) [hour],Evening Time (WE) [hour],Morning Prob [%],Afternoon Prob [%],Evening Prob [%],Morning Prob (WE) [%],Afternoon Prob (WE) [%],Evening Prob (WE) [%]
-ict,1,7,150,30,60,240,30,60,240,7,12,19,9,12,19,100,100,100,100,100,100
+ict,100,7,150,30,60,240,30,60,240,7,12,19,9,12,19,50,25,75,30,30,75
 -,-,-,15,3,6,24,3,6,24,1,1,1,1,1,1,-,-,-,-,-,-

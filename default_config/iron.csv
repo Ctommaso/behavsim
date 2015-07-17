@@ -1,3 +1,3 @@
 Name of the Simulation,Number of Houses,Number of Days,Power [W],Duration [min],Probability [%],Earliest Start [hour],Latest Start [hour]
-iron,1,7,1000,45,100,7,23
--,-,-,10,4.5,-,-,-
+iron,100,7,1200,60,15,7,23
+-,-,-,12,6,-,1,1
