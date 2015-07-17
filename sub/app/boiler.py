@@ -214,7 +214,10 @@ def boiler(param, res_dir, text_view):
     h = int(gt//3600.0)
     m = int((gt % 3600.0)//60.0)
     s = (gt % 3600.0) % 60.0
-
+    
     # Writes the global simulation time to the terminal.
-    text = "The "+name+" Consumption Simulation took %d hours, %d minutes, and %.3f seconds." % (h, m, s)
+    text = "The "+name+" Consumption Simulation took:"
+    sub.gui.display(text_view, text, "red")
+    
+    text = "%d hours, %d minutes, and %.3f seconds." % (h, m, s)
     sub.gui.display(text_view, text, "red")
